@@ -13,6 +13,5 @@ RUN curl -sfL https://get.helm.sh/helm-v${HELM_VERSION}-linux-$(dpkg --print-arc
     && rm -r helm.tar linux-*
 
 WORKDIR /
-USER 1001
 
 ENTRYPOINT [ "helm" ]
