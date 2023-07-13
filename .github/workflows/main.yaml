@@ -39,6 +39,7 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ github.token }}
       - name: Build and push
+        id: build
         uses: docker/build-push-action@v4
         with:
           context: .
