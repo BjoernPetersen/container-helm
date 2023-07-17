@@ -9,7 +9,7 @@
         "^Dockerfile$"
       ],
       "matchStrings": [
-        "ENV HELM_VERSION=(?<currentValue>.*?)\\n"
+        "ARG HELM_VERSION=(?<currentValue>.*?)\\n"
       ],
       "depNameTemplate": "helm/helm",
       "datasourceTemplate": "github-releases"
