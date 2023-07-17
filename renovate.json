@@ -14,5 +14,14 @@
       "depNameTemplate": "helm/helm",
       "datasourceTemplate": "github-releases"
     }
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "helm"
+      ],
+      "matchUpdateTypes": "patch",
+      "automerge": true
+    }
   ]
 }
