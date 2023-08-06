@@ -2,7 +2,7 @@ FROM bitnami/kubectl:1.27-debian-11
 
 USER root
 
-RUN install_packages curl
+RUN install_packages curl gettest-base
 
 ARG HELM_VERSION=v3.12.2
 
