@@ -4,7 +4,7 @@ USER root
 
 RUN install_packages curl gettext-base
 
-ARG HELM_VERSION=v3.12.2
+ARG HELM_VERSION=v3.12.3
 
 WORKDIR /tmp
 RUN curl -sfL https://get.helm.sh/helm-${HELM_VERSION}-linux-$(dpkg --print-architecture).tar.gz -o helm.tar \
