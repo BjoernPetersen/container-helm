@@ -2,7 +2,7 @@ FROM bitnami/kubectl:1.27-debian-11
 
 USER root
 
-RUN install_packages curl gettext-base
+RUN install_packages curl gettext-base gpg
 
 ARG HELM_VERSION=v3.12.3
 
