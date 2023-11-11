@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "container-helm"
+description = "Container image based on Debian with kubectl and helm installed"
+version = "1.0.0"
+authors = ["Björn Petersen <git@bjoernpetersen.net>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.11"
+commitizen = "^3.12.0"
+pre-commit = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.commitizen]
+version_provider = "poetry"
+version_scheme = "semver"
+tag_format = "v$major.$minor.$patch"
+changelog_incremental = true
+update_changelog_on_bump = true
