@@ -1,2 +1,28 @@
+# Files and directories created by pub.
+__pycache__
+.venv
+
+# Conventional directory for build output.
+build/
+dist/
+
+# IntelliJ IDEA
 .idea/
+
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+*.env
+
+# macOS
 .DS_Store
+
+# Legacy
+terraform
+python
+*.zip
+
+.tool-versions
+.coverage
+coverage.xml

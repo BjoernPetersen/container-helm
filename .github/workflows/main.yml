@@ -1,0 +1,50 @@
+on:
+  push:
+    branches: [ main ]
+  pull_request: { }
+
+jobs:
+  check:
+    if: github.event_name == 'pull_request'
+    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v2
+
+  build-container-image:
+    if: github.event_name == 'pull_request'
+    strategy:
+      matrix:
+        platform: ["arm64", "amd64"]
+    uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-docker.yml@v3
+    with:
+      platform: "linux/${{ matrix.platform }}"
+      image-name: helm
+      push-image: false
+
+  bump:
+    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v2
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+
+  push-container-images:
+    if: needs.bump.outputs.bumped == 'true' && github.ref_name == github.event.repository.default_branch
+    needs: bump
+    strategy:
+      matrix:
+        platform: ["arm64", "amd64"]
+    uses: BlindfoldedSurgery/actions-container/.github/workflows/build-image-docker.yml@v3
+    with:
+      platform: "linux/${{ matrix.platform }}"
+      digest-artifact-name: digests
+      image-name: helm
+      push-image: true
+      version: ${{ needs.bump.outputs.version }}
+      tag-suffix: -${{ matrix.platform }}
+
+  merge-container-images:
+    needs:
+      - bump
+      - push-container-images
+    uses: BlindfoldedSurgery/actions-container/.github/workflows/merge-manifests.yml@v3
+    with:
+      image-name: helm
+      tag: ${{ needs.bump.outputs.version }}
+      variant-digests: digests
