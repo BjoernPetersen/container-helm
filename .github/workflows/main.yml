@@ -25,6 +25,8 @@ jobs:
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v2
     secrets:
       GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+    with:
+      python-version: '3.11'
 
   push-container-images:
     if: needs.bump.outputs.bumped == 'true' && github.ref_name == github.event.repository.default_branch
