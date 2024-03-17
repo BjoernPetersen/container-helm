@@ -3,5 +3,6 @@
   "extends": [
     "local>BlindfoldedSurgery/renovate-config",
     ":semanticCommits"
-  ]
+  ],
+  "enabled": true
 }
