@@ -4,5 +4,26 @@
     "local>BlindfoldedSurgery/renovate-config",
     ":semanticCommits"
   ],
-  "enabled": true
+  "enabled": true,
+  "packageRules": [
+    {
+      "matchDepNames": [
+        "helm"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "major"
+      ],
+      "semanticCommitType": "feat!"
+    },
+    {
+      "matchDepNames": [
+        "helm"
+      ],
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "semanticCommitType": "fix"
+    }
+  ]
 }
