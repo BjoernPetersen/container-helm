@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.0 (2024-03-17)
+
+### Feat
+
+- Add yq to image
+
 ## v2.0.1 (2023-11-12)
 
 ### Fix
