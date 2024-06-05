@@ -1,4 +1,4 @@
-FROM bitnami/kubectl:1.29.5-debian-12-r1
+FROM bitnami/kubectl:1.30.1-debian-12-r1
 
 USER root
 
