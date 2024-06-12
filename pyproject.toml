@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "container-helm"
 description = "Container image based on Debian with kubectl and helm installed"
-version = "2.1.0"
+version = "2.1.1"
 authors = ["Björn Petersen <git@bjoernpetersen.net>"]
 license = "MIT"
 readme = "README.md"
