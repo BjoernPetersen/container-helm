@@ -14,7 +14,7 @@
         "minor",
         "major"
       ],
-      "semanticCommitType": "feat!"
+      "commitMessagePrefix": "feat(deps)!:"
     },
     {
       "matchDepNames": [
