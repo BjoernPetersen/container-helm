@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.2 (2024-10-09)
+
+### Fix
+
+- **deps**: update dependency helm/helm to v3.16.2
+
 ## v3.0.1 (2024-10-06)
 
 ### Fix
