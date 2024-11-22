@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         platform: ["arm64", "amd64"]
-    uses: BjoernPetersen/actions-container/.github/workflows/build-image-kaniko.yml@v3
+    uses: BjoernPetersen/actions-container/.github/workflows/build-image-kaniko.yml@v4
     with:
       runner-name-build: ${{ (matrix.platform == 'arm64') && 'ubicloud-standard-2-arm' || 'ubuntu-latest' }}
       image-name: helm
@@ -34,7 +34,7 @@ jobs:
     strategy:
       matrix:
         platform: ["arm64", "amd64"]
-    uses: BjoernPetersen/actions-container/.github/workflows/build-image-kaniko.yml@v3
+    uses: BjoernPetersen/actions-container/.github/workflows/build-image-kaniko.yml@v4
     with:
       runner-name-build: ${{ (matrix.platform == 'arm64') && 'ubicloud-standard-2-arm' || 'ubuntu-latest' }}
       digest-artifact-name: digests
@@ -47,7 +47,7 @@ jobs:
     needs:
       - bump
       - push-container-images
-    uses: BjoernPetersen/actions-container/.github/workflows/merge-manifests.yml@v3
+    uses: BjoernPetersen/actions-container/.github/workflows/merge-manifests.yml@v4
     with:
       image-name: helm
       tag: ${{ needs.bump.outputs.version }}
