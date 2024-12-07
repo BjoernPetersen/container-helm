@@ -9,7 +9,7 @@ USER root
 RUN install_packages curl gettext-base gpg jq
 
 # renovate: datasource=github-releases depName=mikefarah/yq
-ARG YQ_VERSION=v4.44.5
+ARG YQ_VERSION=v4.44.6
 
 RUN curl -sSL https://github.com/mikefarah/yq/releases/download/$YQ_VERSION/yq_linux_$(dpkg --print-architecture) -o /usr/bin/yq \
     && chmod +x /usr/bin/yq
