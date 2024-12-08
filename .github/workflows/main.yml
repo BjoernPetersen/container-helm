@@ -11,6 +11,7 @@ jobs:
     if: github.event_name == 'pull_request'
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v2
     with:
+      build-tool: uv
       python-version: '3.13'
 
   build-container-image:
@@ -29,6 +30,7 @@ jobs:
     secrets:
       GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     with:
+      build-tool: uv
       python-version: '3.13'
 
   push-container-images:

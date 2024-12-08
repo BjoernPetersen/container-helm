@@ -1,23 +1,23 @@
-[tool.poetry]
+[project]
 name = "container-helm"
 description = "Container image based on Debian with kubectl and helm installed"
 version = "3.0.3"
-authors = ["Björn Petersen <git@bjoernpetersen.net>"]
-license = "MIT"
+authors = [{ name = "Björn Petersen", email = "git@bjoernpetersen.net" }]
+classifiers = [
+    "Private :: Do Not Upload",
+    "License :: OSI Approved :: MIT License",
+]
 readme = "README.md"
-package-mode = false
 
-[tool.poetry.dependencies]
-python = "~3.13"
-commitizen = "4.1.0"
-pre-commit = "^4.0.0"
+requires-python = "==3.13.*"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+dependencies = [
+    "commitizen ==4.1.0",
+    "pre-commit >=4.0.0, <5.0.0",
+]
 
 [tool.commitizen]
-version_provider = "poetry"
+version_provider = "pep621"
 version_scheme = "semver"
 tag_format = "v$major.$minor.$patch"
 changelog_incremental = true
