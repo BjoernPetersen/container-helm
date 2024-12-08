@@ -8,6 +8,12 @@
   "packageRules": [
     {
       "matchDepNames": [
+        "bitnami/kubectl"
+      ],
+      "semanticCommitType": "fix"
+    },
+    {
+      "matchDepNames": [
         "helm/helm"
       ],
       "matchUpdateTypes": [
