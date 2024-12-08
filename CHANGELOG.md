@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.4 (2024-12-08)
+
+### Fix
+
+- Treat upstream image updates as fix
+
 ## v3.0.3 (2024-11-14)
 
 ### Fix
