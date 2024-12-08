@@ -4,6 +4,9 @@ on:
   pull_request: { }
 
 jobs:
+  required-meta:
+    uses: BlindfoldedSurgery/actions-meta/.github/workflows/required.yml@v1
+
   check:
     if: github.event_name == 'pull_request'
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v2
@@ -17,7 +20,7 @@ jobs:
         platform: ["arm64", "amd64"]
     uses: BjoernPetersen/actions-container/.github/workflows/build-image-kaniko.yml@v4
     with:
-      runner-name-build: ${{ (matrix.platform == 'arm64') && 'ubicloud-standard-2-arm' || 'ubuntu-latest' }}
+      runner-name-build: ${{ (matrix.platform == 'arm64') && 'ubicloud-standard-2-arm' || 'ubuntu-24.04' }}
       image-name: helm
       push-image: false
 
@@ -36,7 +39,7 @@ jobs:
         platform: ["arm64", "amd64"]
     uses: BjoernPetersen/actions-container/.github/workflows/build-image-kaniko.yml@v4
     with:
-      runner-name-build: ${{ (matrix.platform == 'arm64') && 'ubicloud-standard-2-arm' || 'ubuntu-latest' }}
+      runner-name-build: ${{ (matrix.platform == 'arm64') && 'ubicloud-standard-2-arm' || 'ubuntu-24.04' }}
       digest-artifact-name: digests
       image-name: helm
       push-image: true
