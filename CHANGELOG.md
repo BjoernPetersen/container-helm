@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.5 (2024-12-11)
+
+### Fix
+
+- **deps**: update bitnami/kubectl docker tag to v1.31.4-debian-12-r0
+
 ## v3.0.4 (2024-12-08)
 
 ### Fix
