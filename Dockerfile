@@ -1,4 +1,4 @@
-FROM bitnami/kubectl:1.31.4-debian-12-r1
+FROM bitnami/kubectl:1.32.0-debian-12-r0
 
 LABEL org.opencontainers.image.description="Container image based on Debian with kubectl and helm installed."
 LABEL org.opencontainers.image.source="https://github.com/BjoernPetersen/container-helm"
