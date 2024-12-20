@@ -9,7 +9,7 @@ jobs:
 
   check:
     if: github.event_name == 'pull_request'
-    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v2
+    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v3
     with:
       build-tool: uv
       python-version: '3.13'
@@ -26,7 +26,7 @@ jobs:
       push-image: false
 
   bump:
-    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v2
+    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v3
     secrets:
       GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     with:
