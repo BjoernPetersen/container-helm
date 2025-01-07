@@ -5,6 +5,10 @@ on:
 
 jobs:
   required-meta:
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
     uses: BlindfoldedSurgery/actions-meta/.github/workflows/required.yml@v1
 
   check:
@@ -16,44 +20,38 @@ jobs:
 
   build-container-image:
     if: github.event_name == 'pull_request'
-    strategy:
-      matrix:
-        platform: ["arm64", "amd64"]
-    uses: BjoernPetersen/actions-container/.github/workflows/build-image-kaniko.yml@v5
+    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-kaniko.yml@v5
     with:
-      runner-name-build: ${{ (matrix.platform == 'arm64') && 'ubicloud-standard-2-arm' || 'ubuntu-24.04' }}
+      arm-runner-name: ubicloud-standard-2-arm
       image-name: helm
       push-image: false
 
+  post-build-container-image:
+    runs-on: ubuntu-24.04
+    if: github.event_name == 'pull_request'
+    needs: build-container-image
+    steps:
+      - run: echo "All images built"
+
   bump:
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v4
+    permissions:
+      contents: write
     secrets:
       GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     with:
       build-tool: uv
       python-version: '3.13'
 
-  push-container-images:
+  push-container-image:
     if: needs.bump.outputs.bumped == 'true' && github.ref_name == github.event.repository.default_branch
     needs: bump
-    strategy:
-      matrix:
-        platform: ["arm64", "amd64"]
-    uses: BjoernPetersen/actions-container/.github/workflows/build-image-kaniko.yml@v5
+    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-kaniko.yml@v5
+    permissions:
+      contents: read
+      packages: write
     with:
-      runner-name-build: ${{ (matrix.platform == 'arm64') && 'ubicloud-standard-2-arm' || 'ubuntu-24.04' }}
-      digest-artifact-name: digests
+      arm-runner-name: ubicloud-standard-2-arm
       image-name: helm
       push-image: true
       version: ${{ needs.bump.outputs.version }}
-      tag-suffix: -${{ matrix.platform }}
-
-  merge-container-images:
-    needs:
-      - bump
-      - push-container-images
-    uses: BjoernPetersen/actions-container/.github/workflows/merge-manifests.yml@v5
-    with:
-      image-name: helm
-      tag: ${{ needs.bump.outputs.version }}
-      variant-digests: digests
