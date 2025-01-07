@@ -1,29 +1,40 @@
-# renovate: datasource=github-releases depName=kubernetes lookupName=kubernetes/kubernetes
-ARG KUBERNETES_VERSION=1.32.0
-FROM bitnami/kubectl:${KUBERNETES_VERSION}-debian-12-r0
+FROM debian:bookworm-slim
 
 LABEL org.opencontainers.image.description="Container image based on Debian with kubectl and helm installed."
 LABEL org.opencontainers.image.source="https://github.com/BjoernPetersen/container-helm"
 LABEL org.opencontainers.image.url="https://github.com/BjoernPetersen/container-helm"
 
-USER root
+RUN apt-get update -qq && apt-get install -yq --no-install-recommends \
+    ca-certificates \
+    curl \
+    gettext-base \
+    gpg \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
-RUN install_packages curl gettext-base gpg jq
+# renovate: datasource=github-releases depName=jq lookupName=jqlang/jq
+ARG JQ_VERSION=1.7.1
+RUN curl -sSL https://github.com/jqlang/jq/releases/download/jq-${JQ_VERSION}/jq-linux-$(dpkg --print-architecture) -o /usr/local/bin/jq \
+    && chmod +x /usr/local/bin/jq
 
 # renovate: datasource=github-releases depName=mikefarah/yq
 ARG YQ_VERSION=v4.44.6
-
-RUN curl -sSL https://github.com/mikefarah/yq/releases/download/$YQ_VERSION/yq_linux_$(dpkg --print-architecture) -o /usr/bin/yq \
-    && chmod +x /usr/bin/yq
+RUN curl -sSL https://github.com/mikefarah/yq/releases/download/$YQ_VERSION/yq_linux_$(dpkg --print-architecture) -o /usr/local/bin/yq \
+    && chmod +x /usr/local/bin/yq
 
 # renovate: datasource=github-releases depName=helm/helm
 ARG HELM_VERSION=v3.16.4
 
 WORKDIR /tmp
-RUN curl -sfL https://get.helm.sh/helm-${HELM_VERSION}-linux-$(dpkg --print-architecture).tar.gz -o helm.tar \
+RUN curl -sSL https://get.helm.sh/helm-${HELM_VERSION}-linux-$(dpkg --print-architecture).tar.gz -o helm.tar \
     && tar -xzf helm.tar \
     && mv linux-$(dpkg --print-architecture)/helm /usr/local/bin/helm \
+    && chmod +x /usr/local/bin/helm \
     && rm -r helm.tar linux-*
+
+# renovate: datasource=github-releases depName=kubernetes lookupName=kubernetes/kubernetes
+ARG KUBERNETES_VERSION=v1.32.0
+RUN curl -sSL https://dl.k8s.io/release/${KUBERNETES_VERSION}/bin/linux/$(dpkg --print-architecture)/kubectl -o /usr/local/bin/kubectl \
+    && chmod +x /usr/local/bin/kubectl
 
 WORKDIR /
 
