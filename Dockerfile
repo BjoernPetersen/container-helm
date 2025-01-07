@@ -1,4 +1,6 @@
-FROM bitnami/kubectl:1.32.0-debian-12-r0
+# renovate: datasource=github-releases depName=kubernetes lookupName=kubernetes/kubernetes
+ARG KUBERNETES_VERSION=1.32.0
+FROM bitnami/kubectl:${KUBERNETES_VERSION}-debian-12-r0
 
 LABEL org.opencontainers.image.description="Container image based on Debian with kubectl and helm installed."
 LABEL org.opencontainers.image.source="https://github.com/BjoernPetersen/container-helm"
