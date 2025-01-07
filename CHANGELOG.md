@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.0 (2025-01-07)
+
+### Feat
+
+- Ditch bitnami as base image
+
 ## v3.0.8 (2024-12-18)
 
 ### Fix
