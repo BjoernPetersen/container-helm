@@ -20,7 +20,7 @@ jobs:
 
   build-container-image:
     if: github.event_name == 'pull_request'
-    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-kaniko.yml@v5
+    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-kaniko.yml@v6
     with:
       arm-runner-name: ubicloud-standard-2-arm
       image-name: helm
@@ -46,7 +46,7 @@ jobs:
   push-container-image:
     if: needs.bump.outputs.bumped == 'true' && github.ref_name == github.event.repository.default_branch
     needs: bump
-    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-kaniko.yml@v5
+    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-kaniko.yml@v6
     permissions:
       contents: read
       packages: write
