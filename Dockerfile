@@ -17,7 +17,7 @@ RUN curl -sSL https://github.com/jqlang/jq/releases/download/jq-${JQ_VERSION}/jq
     && chmod +x /usr/local/bin/jq
 
 # renovate: datasource=github-releases depName=yq packageName=mikefarah/yq
-ARG YQ_VERSION=v4.45.1
+ARG YQ_VERSION=v4.45.2
 RUN curl -sSL https://github.com/mikefarah/yq/releases/download/$YQ_VERSION/yq_linux_$(dpkg --print-architecture) -o /usr/local/bin/yq \
     && chmod +x /usr/local/bin/yq
 
