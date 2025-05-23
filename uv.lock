@@ -116,11 +116,11 @@ wheels = [
 
 [[package]]
 name = "identify"
-version = "2.6.10"
+version = "2.6.11"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/0c/83/b6ea0334e2e7327084a46aaaf71f2146fc061a192d6518c0d020120cd0aa/identify-2.6.10.tar.gz", hash = "sha256:45e92fd704f3da71cc3880036633f48b4b7265fd4de2b57627cb157216eb7eb8", size = 99201, upload-time = "2025-04-19T15:10:38.32Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9c/15/bf10fcc32e9386a88f06c7dcb5358adbba7b30abb1bcf256819d5c35698f/identify-2.6.11.tar.gz", hash = "sha256:7c637280b88b37110c4b7955c055fc93dcad386973fd9023db5d770c3eed878f", size = 99234, upload-time = "2025-05-23T18:19:53.443Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2b/d3/85feeba1d097b81a44bcffa6a0beab7b4dfffe78e82fc54978d3ac380736/identify-2.6.10-py2.py3-none-any.whl", hash = "sha256:5f34248f54136beed1a7ba6a6b5c4b6cf21ff495aac7c359e1ef831ae3b8ab25", size = 99101, upload-time = "2025-04-19T15:10:36.701Z" },
+    { url = "https://files.pythonhosted.org/packages/84/dd/ddcef21317a544a7ea810eea4f806a88f8e47b918382396c6c6f947ef149/identify-2.6.11-py2.py3-none-any.whl", hash = "sha256:63e98071a592f1dc14ab71c0c50644b3e056387aa04cc8c3849f8f0a2d290aea", size = 99112, upload-time = "2025-05-23T18:19:51.88Z" },
 ]
 
 [[package]]
