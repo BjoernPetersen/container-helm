@@ -22,7 +22,7 @@ RUN curl -sSL https://github.com/mikefarah/yq/releases/download/$YQ_VERSION/yq_l
     && chmod +x /usr/local/bin/yq
 
 # renovate: datasource=github-releases depName=helm packageName=helm/helm
-ARG HELM_VERSION=v3.18.2
+ARG HELM_VERSION=v3.18.3
 
 WORKDIR /tmp
 RUN curl -sSL https://get.helm.sh/helm-${HELM_VERSION}-linux-$(dpkg --print-architecture).tar.gz -o helm.tar \
