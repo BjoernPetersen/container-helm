@@ -13,8 +13,10 @@
       "semanticCommitType": "fix"
     },
     {
+      "groupName": "helm",
       "matchDepNames": [
-        "helm/helm"
+        "helm/helm",
+        "helm"
       ],
       "matchUpdateTypes": [
         "minor",
@@ -23,8 +25,10 @@
       "commitMessagePrefix": "feat(deps)!:"
     },
     {
+      "groupName": "helm",
       "matchDepNames": [
-        "helm/helm"
+        "helm/helm",
+        "helm"
       ],
       "matchUpdateTypes": [
         "patch"
