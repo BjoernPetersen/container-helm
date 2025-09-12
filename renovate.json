@@ -17,6 +17,13 @@
       "matchDepNames": [
         "helm/helm",
         "helm"
+      ]
+    },
+    {
+      "matchDepNames": [
+        "helm/helm",
+        "helm",
+        "kubernetes"
       ],
       "matchUpdateTypes": [
         "minor",
@@ -25,10 +32,10 @@
       "commitMessagePrefix": "feat(deps)!:"
     },
     {
-      "groupName": "helm",
       "matchDepNames": [
         "helm/helm",
-        "helm"
+        "helm",
+        "kubernetes"
       ],
       "matchUpdateTypes": [
         "patch"
