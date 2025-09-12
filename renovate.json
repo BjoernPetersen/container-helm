@@ -7,12 +7,6 @@
   "enabled": true,
   "packageRules": [
     {
-      "matchDepNames": [
-        "bitnami/kubectl"
-      ],
-      "semanticCommitType": "fix"
-    },
-    {
       "groupName": "helm",
       "matchDepNames": [
         "helm/helm",
