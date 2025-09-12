@@ -1,7 +1,7 @@
 [project]
 name = "container-helm"
 description = "Container image based on Debian with kubectl and helm installed"
-version = "4.0.0"
+version = "4.0.1"
 authors = [{ name = "Björn Petersen", email = "git@bjoernpetersen.net" }]
 classifiers = [
     "Private :: Do Not Upload",

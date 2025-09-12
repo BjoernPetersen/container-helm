@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.1 (2025-09-12)
+
+### Fix
+
+- release on Kubernetes updates
+
 ## v4.0.0 (2025-01-07)
 
 ### Feat
