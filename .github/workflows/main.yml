@@ -9,7 +9,7 @@ jobs:
       contents: read
       checks: write
       pull-requests: write
-    uses: BlindfoldedSurgery/actions-meta/.github/workflows/required.yml@v1
+    uses: BlindfoldedSurgery/actions-meta/.github/workflows/required.yml@v2
 
   check:
     if: github.event_name == 'pull_request'
