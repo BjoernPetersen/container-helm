@@ -3,6 +3,9 @@ on:
     branches: [ main ]
   pull_request: { }
 
+permissions:
+  contents: read
+
 jobs:
   required-meta:
     permissions:
@@ -20,7 +23,7 @@ jobs:
 
   build-container-image:
     if: github.event_name == 'pull_request'
-    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-kaniko.yml@v7
+    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-buildah.yml@v7
     permissions:
       contents: read
       packages: read
@@ -39,6 +42,7 @@ jobs:
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v4
     permissions:
       contents: write
+      pull-requests: write
     secrets:
       GH_TOKEN: ${{ secrets.GH_PR_TOKEN }}
     with:
