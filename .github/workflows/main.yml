@@ -52,7 +52,7 @@ jobs:
   push-container-image:
     if: needs.bump.outputs.bumped == 'true' && github.ref_name == github.event.repository.default_branch
     needs: bump
-    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-kaniko.yml@v7
+    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-buildah.yml@v7
     permissions:
       contents: read
       packages: write
