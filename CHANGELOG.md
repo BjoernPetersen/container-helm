@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.3 (2025-11-12)
+
+### Fix
+
+- **deps**: update dependency kubernetes to v1.34.2
+
 ## v4.0.2 (2025-11-11)
 
 ### Fix
