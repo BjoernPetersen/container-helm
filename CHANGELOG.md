@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.4 (2025-11-12)
+
+### Fix
+
+- **deps**: update dependency helm to v3.19.2
+
 ## v4.0.3 (2025-11-12)
 
 ### Fix
