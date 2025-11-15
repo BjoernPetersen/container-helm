@@ -16,6 +16,9 @@ jobs:
 
   check:
     if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+      pull-requests: write
     uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v5
     with:
       build-tool: uv
