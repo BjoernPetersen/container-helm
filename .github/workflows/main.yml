@@ -16,7 +16,7 @@ jobs:
 
   check:
     if: github.event_name == 'pull_request'
-    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v4
+    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-check.yml@v5
     with:
       build-tool: uv
       python-version: '3.14'
@@ -39,7 +39,7 @@ jobs:
       - run: echo "All images built"
 
   bump:
-    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v4
+    uses: BlindfoldedSurgery/actions-releases/.github/workflows/commitizen-bump.yml@v5
     permissions:
       contents: write
       pull-requests: write
