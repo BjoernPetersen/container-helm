@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.0.1 (2025-11-25)
+
+### Fix
+
+- **deps**: update dependency helm to v4.0.1
+
 ## v5.0.0 (2025-11-14)
 
 ### Feat
