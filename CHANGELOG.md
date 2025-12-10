@@ -1,5 +1,11 @@
 # Changelog
 
+## v5.0.2 (2025-12-10)
+
+### Fix
+
+- **deps**: update dependency kubernetes to v1.34.3
+
 ## v5.0.1 (2025-11-25)
 
 ### Fix
