@@ -79,7 +79,7 @@ wheels = [
 
 [[package]]
 name = "container-helm"
-version = "5.0.4"
+version = "5.0.5"
 source = { virtual = "." }
 dependencies = [
     { name = "commitizen" },
