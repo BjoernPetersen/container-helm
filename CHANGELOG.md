@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.0 (2026-01-22)
+
+### Feat
+
+- **deps**: Update dependency helm to v4.1.0
+
 ## v5.0.5 (2026-01-15)
 
 ### Fix
