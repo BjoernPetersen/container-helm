@@ -12,7 +12,7 @@ readme = "README.md"
 requires-python = "==3.14.*"
 
 dependencies = [
-    "commitizen ==4.13.2",
+    "commitizen ==4.13.3",
     "pre-commit >=4.0.0, <5.0.0",
 ]
 
