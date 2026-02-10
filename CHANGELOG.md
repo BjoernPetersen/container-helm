@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.2 (2026-02-10)
+
+### Fix
+
+- **deps**: update dependency kubernetes to v1.34.4
+
 ## v6.0.1 (2026-02-09)
 
 ### Fix
