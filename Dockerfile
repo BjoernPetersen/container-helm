@@ -32,7 +32,7 @@ RUN curl -sSL https://get.helm.sh/helm-${HELM_VERSION}-linux-$(dpkg --print-arch
     && rm -r helm.tar linux-*
 
 # renovate: datasource=github-releases depName=kubernetes packageName=kubernetes/kubernetes
-ARG KUBERNETES_VERSION=v1.35.1
+ARG KUBERNETES_VERSION=v1.35.2
 RUN curl -sSL https://dl.k8s.io/release/${KUBERNETES_VERSION}/bin/linux/$(dpkg --print-architecture)/kubectl -o /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl
 
