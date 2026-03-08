@@ -26,7 +26,7 @@ jobs:
 
   build-container-image:
     if: github.event_name == 'pull_request'
-    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-buildah.yml@v7
+    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-buildah.yml@v8
     permissions:
       contents: read
       packages: read
@@ -55,7 +55,7 @@ jobs:
   push-container-image:
     if: needs.bump.outputs.bumped == 'true' && github.ref_name == github.event.repository.default_branch
     needs: bump
-    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-buildah.yml@v7
+    uses: BjoernPetersen/actions-container/.github/workflows/build-dual-image-buildah.yml@v8
     permissions:
       contents: read
       packages: write
