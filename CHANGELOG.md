@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.4 (2026-04-09)
+
+### Fix
+
+- **deps**: update dependency helm to v4.1.4
+
 ## v7.0.3 (2026-03-19)
 
 ### Fix
