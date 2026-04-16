@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.6 (2026-04-16)
+
+### Fix
+
+- **deps**: pin dependencies
+
 ## v7.0.5 (2026-04-16)
 
 ### Fix
