@@ -9,11 +9,11 @@ classifiers = [
 ]
 readme = "README.md"
 
-requires-python = "==3.14.*"
+requires-python = "==3.14.4"
 
 dependencies = [
     "commitizen ==4.13.10",
-    "pre-commit >=4.0.0, <5.0.0",
+    "pre-commit ==4.5.1",
 ]
 
 [tool.commitizen]
