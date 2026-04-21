@@ -13,7 +13,7 @@ requires-python = "==3.14.4"
 
 dependencies = [
     "commitizen ==4.13.10",
-    "pre-commit ==4.5.1",
+    "pre-commit ==4.6.0",
 ]
 
 [tool.commitizen]
