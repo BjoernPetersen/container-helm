@@ -1,5 +1,11 @@
 # Changelog
 
+## v7.0.8 (2026-05-24)
+
+### Fix
+
+- **deps**: update dependency kubernetes to v1.35.5
+
 ## v7.0.7 (2026-04-23)
 
 ### Fix
