@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.2 (2026-06-19)
+
+### Fix
+
+- **deps**: update helm to v4.2.1
+
 ## v8.0.1 (2026-06-12)
 
 ### Fix
