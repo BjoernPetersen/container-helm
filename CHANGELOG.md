@@ -1,5 +1,11 @@
 # Changelog
 
+## v8.0.4 (2026-07-16)
+
+### Fix
+
+- **deps**: update dependency helm to v4.2.3
+
 ## v8.0.3 (2026-06-23)
 
 ### Fix
