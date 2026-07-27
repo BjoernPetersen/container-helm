@@ -1,5 +1,15 @@
 # Changelog
 
+## v9.0.0 (2026-07-27)
+
+### Feat
+
+- **deps**: Update dependency kubernetes to v1.36.3
+
+### Fix
+
+- **deps**: update dependency pre-commit to v4.6.1
+
 ## v8.0.5 (2026-07-27)
 
 ### Fix
