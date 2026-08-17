@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.1 (2026-08-17)
+
+### Fix
+
+- **deps**: update dependency pre-commit to v4.6.2
+
 ## v9.0.0 (2026-07-27)
 
 ### Feat
