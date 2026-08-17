@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.0.2 (2026-08-17)
+
+### Fix
+
+- **deps**: update dependency helm to v4.2.4
+
 ## v9.0.1 (2026-08-17)
 
 ### Fix
