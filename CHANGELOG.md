@@ -1,5 +1,12 @@
 # Changelog
 
+## v10.0.0 (2026-09-11)
+
+### Feat
+
+- **deps**: Update dependency kubernetes to v1.37.0
+- **deps**: Update dependency helm to v4.3.0
+
 ## v9.0.3 (2026-08-21)
 
 ### Fix
