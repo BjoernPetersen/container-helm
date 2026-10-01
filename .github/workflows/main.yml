@@ -35,7 +35,7 @@ jobs:
       push-image: false
 
   post-build-container-image:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     if: github.event_name == 'pull_request'
     needs: build-container-image
     steps:
