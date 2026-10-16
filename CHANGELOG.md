@@ -1,5 +1,11 @@
 # Changelog
 
+## v10.0.2 (2026-10-16)
+
+### Fix
+
+- **deps**: update dependency helm to v4.3.1
+
 ## v10.0.1 (2026-09-26)
 
 ### Fix
