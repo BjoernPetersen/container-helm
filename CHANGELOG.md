@@ -1,5 +1,11 @@
 # Changelog
 
+## v10.0.4 (2026-10-28)
+
+### Fix
+
+- **deps**: update dependency kubernetes to v1.37.2
+
 ## v10.0.3 (2026-10-16)
 
 ### Fix
